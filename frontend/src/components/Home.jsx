@@ -2,8 +2,13 @@ import Canvas from './Canvas';
 import { Link } from 'react-router-dom';
 import logo from '../images/homepage/header8.png';
 import info from '../images/homepage/info.png';
-import redeem from '../images/homepage/redeem.png';
 
+import {db} from './Firebase.js'
+import { collection, addDoc, getDoc } from "firebase/firestore";
+
+const docSnap  = getDoc(db, "prueba","qwe").then(data=>{
+console.log(docSnap.data());
+});
 
 
 function Home() {
@@ -21,11 +26,7 @@ function Home() {
        <div className="nav-item">
         <img src={info} width="300" alt="" />
        </div>
-       <div className="nav-item">
-        <Link to="/redeem"> 
-          <img src={redeem} width="120" alt="" /> 
-        </Link>
-       </div>
+       
       </div>
       <div className="ad">
         <div className="ad-collection">

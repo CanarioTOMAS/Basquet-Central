@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './App.css';
 
+// const analytics = getAnalytics(app);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

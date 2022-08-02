@@ -40,42 +40,36 @@ class Canvas extends React.Component {
     var background = new Image(); 
     background.src = 'https://previews.123rf.com/images/tonygers/tonygers1401/tonygers140100028/25082143-una-vista-a%C3%A9rea-de-una-cancha-de-baloncesto-completan-con-las-marcas-.jpg'; 
     background.onload = () => {
-      context.drawImage(background, 0, 0); 
+      context.drawImage(background,0,0); 
       this.drawBoard(context);
     }
+    
 
     canvas.addEventListener('mousedown', (e)=> {
-      /* 
-        Explanation: 
-          If it's a block # under 10, get the tenth place value. 
-            I.e: (83, 0) = Block 8 on the X axis. 
-            https://stackoverflow.com/questions/24226324/getting-place-values-of-a-number-w-modulus
 
-          If it's block # 100 - 1000, get the first two digits. 
-            I.e: (110, 0) = Block 11 on the X axis
-      */
       var xBlock = 0; 
       var yBlock = 0; 
 
       if (e.offsetX < 840) {
         xBlock = Math.floor((e.offsetX/30) % 100); 
       }
-      else if (e.offsetX < 1000) {
-        xBlock = parseInt(e.offsetX.toString().substr(0,2));
+      else if (e.offsetX <  840) {
+        xBlock = parseInt(e.offsetX.toString().substr(0,0));
       }
 
       if (e.offsetY < 540) {
         yBlock = Math.floor((e.offsetY/30) % 100);
       }
-      else if (e.offsetY < 1000) {
-        yBlock = parseInt(e.offsetY.toString().substr(0,2));
+      else if (e.offsetY < 540) {
+        yBlock = parseInt(e.offsetY.toString().substr(0,0));
       }
 
       // Need to get block position on grid
       
-      var blockPosition = ' H:'+xBlock + '/Y:'+yBlock ;
-
+      var blockPosition = ' H:'+xBlock + '/ V:'+yBlock ;
+      
       if(blockPosition){
+        context.fillRect(xBlock * 30, yBlock * 30 , 30, 30)
         this.state.paintedPixels.push(blockPosition)
         console.log(this.state.paintedPixels);
       }
@@ -84,6 +78,7 @@ class Canvas extends React.Component {
   
     this.drawBoard(context);
   }
+
    boton(data){
     console.log('click') 
     var url = 'https://wa.me/+543571311605/?text=Deseo+comprar+los+metros+cuadrados+en+las+posiciones+' + data;

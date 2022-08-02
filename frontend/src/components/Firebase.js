@@ -1,22 +1,24 @@
-import firebase from 'firebase/app';
-import 'firebase/storage';
-import 'firebase/firestore';
-import 'firebase/analytics';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+import { collection, doc, setDoc } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-var firebaseConfig = {
-    apiKey: "AIzaSyDxQI6FosHQM8EqWnE-uqpfQJI2BFX-M00",
-    authDomain: "mnft-b983b.firebaseapp.com",
-    projectId: "mnft-b983b",
-    storageBucket: "mnft-b983b.appspot.com",
-    messagingSenderId: "403907320876",
-    appId: "1:403907320876:web:9dd8ba87c1dd1590248589",
-    measurementId: "G-2RR9692KS0"
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAOvGw6Zy6lnWQS6oraVZoFZx15Zgj4ICk",
+  authDomain: "basquet-central.firebaseapp.com",
+  databaseURL: "https://basquet-central-default-rtdb.firebaseio.com",
+  projectId: "basquet-central",
+  storageBucket: "basquet-central.appspot.com",
+  messagingSenderId: "954160968950",
+  appId: "1:954160968950:web:f3c95d584d2c190655a8d7",
+  measurementId: "G-XGP39YQYLF"
 };
 
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-const firestoreRef = firebase.firestore();
-const firebaseStorageRef = firebase.storage();
-
-export {firestoreRef, firebaseStorageRef};
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+export const analytics = getAnalytics(app);
+export const db = getFirestore(app);
