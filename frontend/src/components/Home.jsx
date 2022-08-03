@@ -1,14 +1,7 @@
 import Canvas from './Canvas';
-import { Link } from 'react-router-dom';
+
 import logo from '../images/homepage/header8.png';
 import info from '../images/homepage/info.png';
-
-import {db} from './Firebase.js'
-import { collection, addDoc, getDoc } from "firebase/firestore";
-
-const docSnap  = getDoc(db, "prueba","qwe").then(data=>{
-console.log(docSnap.data());
-});
 
 
 function Home() {

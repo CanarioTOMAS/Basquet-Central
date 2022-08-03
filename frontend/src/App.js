@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './components/Home';
+import {checkTakedPixels} from './services/pixeles'
 
 import {
   BrowserRouter as Router,
@@ -9,6 +10,10 @@ import {
 
 
 function App() {
+
+  checkTakedPixels()
+
+
   return (
     <Router>
     <div>

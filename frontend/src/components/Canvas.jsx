@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css';
 import { useState } from 'react';
+import { getPixeles } from '../services/pixeles'
 
 class Canvas extends React.Component {  
   
@@ -43,6 +44,8 @@ class Canvas extends React.Component {
       context.drawImage(background,0,0); 
       this.drawBoard(context);
     }
+
+    let pixelesPintados = getPixeles()
     
 
     canvas.addEventListener('mousedown', (e)=> {
@@ -72,6 +75,7 @@ class Canvas extends React.Component {
         context.fillRect(xBlock * 30, yBlock * 30 , 30, 30)
         this.state.paintedPixels.push(blockPosition)
         console.log(this.state.paintedPixels);
+        
       }
 
     })
