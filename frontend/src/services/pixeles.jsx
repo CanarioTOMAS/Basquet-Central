@@ -1,16 +1,26 @@
 import {db} from './firebase-config.js'
-import {doc ,getDoc, setDoc , deleteDoc } from "firebase/firestore";
+import {doc,collection ,getDocs, setDoc , deleteDoc ,addDoc} from "firebase/firestore";
 
-export function getPixeles(){
-    const docRef  = doc(db, "prueba","qwe")
-    const docSnap =  getDoc(docRef);
-    console.log(docRef);  
-    console.log(docRef._key.path.segments)
+export async function getPixeles(){
+    const colRef  = collection(db, 'pixeles')
+    const docsRef = await getDocs(colRef);
+
+    console.log(docsRef)
+    docsRef.forEach(doc =>{
+        console.log(doc.data())
+        console.log(doc.id)
+        
+    })
+    
     //return 
 }
 
-export function addPixel(pixel){
-    setDoc(doc(db, "pixeles"), pixel);
+export function addPixel(pixel,info){
+    console.log(pixel)
+    setDoc(doc(db, "pixeles", pixel),{
+        info
+    });
+   
 }
 
 export function cleanPixel(pixel){

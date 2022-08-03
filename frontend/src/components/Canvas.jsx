@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css';
 import { useState } from 'react';
-import { getPixeles } from '../services/pixeles'
+import { getPixeles, addPixel } from '../services/pixeles'
 
 class Canvas extends React.Component {  
   
@@ -69,7 +69,7 @@ class Canvas extends React.Component {
 
       // Need to get block position on grid
       
-      var blockPosition = ' H:'+xBlock + '/ V:'+yBlock ;
+      var blockPosition = ' H'+xBlock+'V'+yBlock ;
       
       if(blockPosition){
         context.fillRect(xBlock * 30, yBlock * 30 , 30, 30)
@@ -77,6 +77,7 @@ class Canvas extends React.Component {
         console.log(this.state.paintedPixels);
         
       }
+      
 
     })
   
@@ -84,17 +85,34 @@ class Canvas extends React.Component {
   }
 
    boton(data){
-    console.log('click') 
-    var url = 'https://wa.me/+543571311605/?text=Deseo+comprar+los+metros+cuadrados+en+las+posiciones+' + data;
-     window.open(url, '_blank');
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    console.log(name,phone,email)
+    var info ={name:name,
+      phone:phone,
+      email:email}
+    for(let i=0;i<data.length;i++){
+ 
+      addPixel(data[i],info)
+    }
+    // var url = 'https://wa.me/+543571311605/?text=Deseo+comprar+los+metros+cuadrados+en+las+posiciones+' + data;
+    //  window.open(url, '_blank');
   }
   
   render() {
     return (
       <div>
-        <heading style={{color: "white" , fontSize:"30px"}}><b>WORK IN PROGRESS - NFT COMING SOON</b></heading>
+        <heading style={{color: "white" , fontSize:"30px"}}></heading>
+        <form action="">
+        <input type="text" placeholder='Nombre' id="name"/>
+        <input type="text" placeholder='Celular' id="phone" />
+        <input type="text" placeholder='Email' id="email"/>
+        
+        </form>
+        <button style={{color:"red"}} onClick={()=>this.boton(this.state.paintedPixels)}>BOTON DE RESERVA</button>
         <heading style={{color: "white"}}></heading>
-        <button onClick={()=>this.boton(this.state.paintedPixels)}></button>
+        
         <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
         <canvas ref="canvasRef" width='840' height='540'  />
       </div>
