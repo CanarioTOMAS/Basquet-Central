@@ -2,6 +2,7 @@ import React from 'react'
 import '../App.css';
 import { useState } from 'react';
 import { getPixeles, addPixel } from '../services/pixeles'
+import { doc } from 'firebase/firestore';
 
 class Canvas extends React.Component {  
   
@@ -11,7 +12,9 @@ class Canvas extends React.Component {
     this.canvasRef = React.createRef();
     this.state = {
       selectedPixel: [],
-      pixelesPintados:[]
+      pixelesPintados:[],
+      datapixel:[],
+      overBlock:''
     };
   }
   
@@ -49,16 +52,40 @@ class Canvas extends React.Component {
    let  pixeles = await getPixeles()
    
    pixeles.forEach(doc =>{
-        //  console.log(doc.data())
         this.state.pixelesPintados.push(doc.id)
           let resultado = doc.id.split(",")
-
           context.fillRect(resultado[0]*30,resultado[1]*30, 30, 30)
       })
-      // console.log(pixelesPintados.docs[0].id)
       
   
+canvas.addEventListener('mousemove',(e)=>{
+  var xBlock = 0; 
+  var yBlock = 0; 
 
+  if (e.offsetX < 840) {
+    xBlock = Math.floor((e.offsetX/30) % 100); 
+  }
+  else if (e.offsetX <  840) {
+    xBlock = parseInt(e.offsetX.toString().substr(0,0));
+  }
+
+  if (e.offsetY < 540) {
+    yBlock = Math.floor((e.offsetY/30) % 100);
+  }
+  else if (e.offsetY < 540) {
+    yBlock = parseInt(e.offsetY.toString().substr(0,0));
+  }
+
+   this.state.overBlock = xBlock+','+yBlock ;
+console.log(this.state.overBlock)
+//console.log(pixeles)
+pixeles.forEach(doc =>{
+  console.log(doc)
+    
+})
+
+
+})
 
     canvas.addEventListener('mousedown', (e)=> {
 
@@ -137,7 +164,8 @@ class Canvas extends React.Component {
         <heading style={{color: "white"}}></heading>
         
         <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
-        <canvas ref="canvasRef" width='840' height='540'  />
+        <abbr title={this.state.overBlock}>
+        <canvas ref="canvasRef" width='840' height='540'  /></abbr>.
       </div>
     );
   }
