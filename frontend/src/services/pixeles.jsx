@@ -1,18 +1,18 @@
 import {db} from './firebase-config.js'
-import {doc,collection ,getDocs, setDoc , deleteDoc ,addDoc} from "firebase/firestore";
+import {doc,collection ,getDocs, setDoc , deleteDoc } from "firebase/firestore";
+
 
 export async function getPixeles(){
     const colRef  = collection(db, 'pixeles')
     const docsRef = await getDocs(colRef);
 
-    console.log(docsRef)
     docsRef.forEach(doc =>{
-        console.log(doc.data())
-        console.log(doc.id)
+    //    console.log(doc.data())
+    //     console.log(doc.id)  
 
     })
-    
-    return 
+   return docsRef
+     
 }
 
 export function addPixel(pixel,info){
@@ -28,6 +28,7 @@ export function cleanPixel(pixel){
 }
 
 export function checkTakedPixels(){
+
     //obtener pixeles que esten taked=true y payed=false
     //obtener la fecha de pixel.date
     // if date+5dias < fechaActual cleanPixel()

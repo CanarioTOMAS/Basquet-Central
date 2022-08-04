@@ -10,7 +10,8 @@ class Canvas extends React.Component {
     super(props);
     this.canvasRef = React.createRef();
     this.state = {
-      paintedPixels: []
+      selectedPixel: [],
+      pixelesPintados:[]
     };
   }
   
@@ -30,7 +31,7 @@ class Canvas extends React.Component {
   }
   
   
-  componentDidMount() {
+  async componentDidMount() {
     const canvas = this.refs.canvasRef
     const context = canvas.getContext('2d')
   
@@ -45,8 +46,19 @@ class Canvas extends React.Component {
       this.drawBoard(context);
     }
 
-    let pixelesPintados = getPixeles()
-    
+   let  pixeles = await getPixeles()
+   
+   pixeles.forEach(doc =>{
+        //  console.log(doc.data())
+        this.state.pixelesPintados.push(doc.id)
+          let resultado = doc.id.split(",")
+
+          context.fillRect(resultado[0]*30,resultado[1]*30, 30, 30)
+      })
+      // console.log(pixelesPintados.docs[0].id)
+      
+  
+
 
     canvas.addEventListener('mousedown', (e)=> {
 
@@ -68,16 +80,26 @@ class Canvas extends React.Component {
       }
 
       // Need to get block position on grid
-      
-      var blockPosition = ' H'+xBlock+'V'+yBlock ;
-      
+      var existe = false
+      var blockPosition = xBlock+','+yBlock ;
+      console.log(blockPosition)
+      console.log(this.state.pixelesPintados)
+      this.state.pixelesPintados.forEach(pixel =>{
+         
+         if(pixel==blockPosition){
+          console.log('existe')
+          existe=true
+         }
+      })
+      if(existe==false){
       if(blockPosition){
         context.fillRect(xBlock * 30, yBlock * 30 , 30, 30)
-        this.state.paintedPixels.push(blockPosition)
-        console.log(this.state.paintedPixels);
+        this.state.selectedPixel.push(blockPosition)
+        this.state.pixelesPintados.push(blockPosition)
+        console.log(blockPosition);
         
       }
-      
+    }
 
     })
   
@@ -89,7 +111,8 @@ class Canvas extends React.Component {
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     console.log(name,phone,email)
-    var info ={name:name,
+    var info ={ 
+      name:name,
       phone:phone,
       email:email}
     for(let i=0;i<data.length;i++){
@@ -110,7 +133,7 @@ class Canvas extends React.Component {
         <input type="text" placeholder='Email' id="email"/>
         
         </form>
-        <button style={{color:"red"}} onClick={()=>this.boton(this.state.paintedPixels)}>BOTON DE RESERVA</button>
+        <button style={{color:"red"}} onClick={()=>this.boton(this.state.selectedPixel)}>BOTON DE RESERVA</button>
         <heading style={{color: "white"}}></heading>
         
         <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
