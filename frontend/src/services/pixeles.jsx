@@ -9,10 +9,10 @@ export async function getPixeles(){
     docsRef.forEach(doc =>{
         console.log(doc.data())
         console.log(doc.id)
-        
+
     })
     
-    //return 
+    return 
 }
 
 export function addPixel(pixel,info){
