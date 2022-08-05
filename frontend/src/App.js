@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './components/Home';
 import {checkTakedPixels} from './services/pixeles'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   BrowserRouter as Router,
