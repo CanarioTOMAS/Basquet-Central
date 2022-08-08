@@ -1,6 +1,10 @@
+import { async } from '@firebase/util';
 import React from 'react'
 import '../App.css';
 import { getPixeles, addPixel } from '../services/pixeles'
+import ModalInfo from './modal'
+
+
 
 
 class Canvas extends React.Component {  
@@ -15,11 +19,13 @@ class Canvas extends React.Component {
       datapixel:[],
       overBlock:'',
       imgRepit:[],
+      showModalInfo:false,
       datoMostrar:'aasdasdasd',
-     
 
-    };
+    }
+     
   }
+
 
   drawBoard(context) {
     for (var x = 0; x < 840; x++) {
@@ -38,6 +44,7 @@ class Canvas extends React.Component {
   
   
   async componentDidMount() {
+    
     const canvas = this.refs.canvasRef
     const context = canvas.getContext('2d')
   
@@ -120,7 +127,7 @@ canvas.addEventListener('mousemove',(e)=>{
 })
 
     canvas.addEventListener('mousedown', (e)=> {
-
+      
       var xBlock = 0; 
       var yBlock = 0; 
 
@@ -143,15 +150,17 @@ canvas.addEventListener('mousemove',(e)=>{
       var blockPosition = xBlock+','+yBlock ;
       console.log(blockPosition)
       console.log(this.state.pixelesPintados)
-      this.state.pixelesPintados.forEach(pixel =>{
+     this.state.pixelesPintados.forEach (pixel   => {
          
          if(pixel==blockPosition){
           console.log('existe')
+         
           existe=true
          }
       })
       if(existe==false){
       if(blockPosition){
+        
         context.fillRect(xBlock * 30, yBlock * 30 , 30, 30)
         this.state.selectedPixel.push(blockPosition)
         this.state.pixelesPintados.push(blockPosition)
@@ -163,6 +172,10 @@ canvas.addEventListener('mousemove',(e)=>{
     })
   
     this.drawBoard(context);
+  }
+  boton2(){
+    this.state.showModalInfo = true
+    console.log(this.state.showModalInfo)
   }
 
    boton(data){
@@ -194,10 +207,14 @@ canvas.addEventListener('mousemove',(e)=>{
         <input type="text" placeholder='Email' id="email"/>
         
         </form>
+    
         <button style={{color:"red"}} onClick={()=>this.boton(this.state.selectedPixel)}>BOTON DE RESERVA</button>
+        <button style={{color:"red"}} onClick={()=>this.boton2()}>TRUE/FALSE</button>
         <heading style={{color: "white"}}></heading>
         
+        <ModalInfo show={this.state.showModalInfo} info={"asdasd"}/>
         <p style={{color: "white"}}>(Grid will be replaced by user-generated images after launch)</p>
+       
         <canvas ref="canvasRef" width='840' height='540'  />
         
       </div>

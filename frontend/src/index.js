@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // const analytics = getAnalytics(app);
 
 ReactDOM.render(
+  
   <React.StrictMode>
     <App />
   </React.StrictMode>,
