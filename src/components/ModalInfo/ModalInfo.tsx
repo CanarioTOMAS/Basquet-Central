@@ -1,15 +1,17 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
+import {block} from '../../interfaces/block'
+import { soldOutBlock } from "../../interfaces/soldOutBlock";
 
 interface ModalInfoProps{
-    info: "string";
+    soldOutBlock?:soldOutBlock;
     show: boolean;
     handleClose: () => void;
 }
   
-const ModalInfo: React.FC<ModalInfoProps> = ({show,info,handleClose}:ModalInfoProps) => {
+const ModalInfo: React.FC<ModalInfoProps> = ({show,soldOutBlock,handleClose}:ModalInfoProps) => {
     
-   
+   console.log(soldOutBlock)
     
     return (
         <>  
@@ -17,7 +19,7 @@ const ModalInfo: React.FC<ModalInfoProps> = ({show,info,handleClose}:ModalInfoPr
             <Modal.Header closeButton>
                 <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{info}</Modal.Body>
+            <Modal.Body>{soldOutBlock?.name}</Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                 Cerrar

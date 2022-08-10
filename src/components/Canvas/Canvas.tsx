@@ -2,16 +2,24 @@ import React, { useEffect, useRef } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { getPixeles, addPixel } from '../../services/pixeles'
 import {block} from '../../interfaces/block'
+import {soldOutBlock} from '../../interfaces/soldOutBlock'
 import  Painter  from "../../services/painter";
+import ModalPurchase from "../ModalPurchase/ModalPurchase";
+import ModalInfo from "../ModalInfo/ModalInfo";
 
   
 const Canvas: React.FC = () => {
     
     const canvasRef = useRef<HTMLCanvasElement>(null);   
-    const [clickBlock, setClickBlock] = React.useState<block>({x: 0, y: 0,image:""});
+    const [clickBlock, setClickBlock] = React.useState<block>();
     const [selectedBlocks, setSelectedBlocks] = React.useState<block[]>([]);
-    const [soldOutBlocks, setSoldOutBlocks] = React.useState<block[]>([]);
+    const [soldOutBlocks, setSoldOutBlocks] = React.useState<soldOutBlock[]>([]);
     const [context, setContext] = React.useState<CanvasRenderingContext2D>();
+    const [show, setShow] = React.useState(false);
+    const [showInfo, setShowInfo] = React.useState(false);
+    const [blockClicked, setBlockClicked] = React.useState<block>();
+    const [soldOutClicked, setSoldOutClicked] = React.useState<soldOutBlock>();
+ 
 
     useEffect(() => {
         const canvas = canvasRef.current;   
@@ -24,17 +32,23 @@ const Canvas: React.FC = () => {
                 addEvents(context,canvas) 
 
                 getPixeles().then(docsSnap => {
-                    let array:block[] = []
-                    docsSnap.forEach((doc:any) => {
+                    let array:soldOutBlock[] = []
+                    docsSnap.forEach((doc:any) => { 
                         let resultado = doc.id.split(",")
-                        let Block:block = {
+                        let data:soldOutBlock = {
                             x: parseInt(resultado[0]), 
                             y: parseInt(resultado[1]),
-                            image: doc.data().info.imagen
+                            image: doc.data().userData.imagen ,
+                            name:  doc.data().userData.name ,  
+                            surname:doc.data().userData.surname ,  
+                            business:doc.data().userData.business,
+                            email:doc.data().userData.email,
+                            phone:doc.data().userData.phone
                         }
-                        Painter.drawSoldOutBlocks(Block,context)
-                        array.push(Block)    
-                        console.log(soldOutBlocks)             
+
+                        Painter.drawSoldOutBlocks(data,context)
+                        array.push(data)    
+                      
                     }) 
                     setSoldOutBlocks(array);                    
                 })               
@@ -45,21 +59,34 @@ const Canvas: React.FC = () => {
     useEffect(() => {
         let existe = false;
         selectedBlocks.forEach(block => {                   
-            if(block.x == clickBlock.x && block.y == clickBlock.y){
+            if(block.x == clickBlock?.x && block.y == clickBlock?.y){
                  existe=true
             }
          })
 
-         soldOutBlocks.forEach(block => {                   
-            if(block.x == clickBlock.x && block.y == clickBlock.y){
+         soldOutBlocks.forEach((b:soldOutBlock) => {                   
+            if(b.x == clickBlock?.x && b.y == clickBlock?.y){
                  existe=true
+console.log(b)
+                setSoldOutClicked(b)
+                setShowInfo(true)
+
+            
             }
          })
 
-         console.log(selectedBlocks)
-         if(!existe){                                
+     
+         if(!existe && selectedBlocks.length<5){     
+          if(clickBlock){
             Painter.drawSelectedBlock(clickBlock,context)              
             setSelectedBlocks([...selectedBlocks , clickBlock]);
+            console.log(selectedBlocks)
+
+          }                           
+            
+           
+         }else{
+          // alert('WPP')
          }
     },[clickBlock]);   
       
@@ -109,16 +136,25 @@ const Canvas: React.FC = () => {
                 let block = {x:xBlock,y:yBlock,image:""};
 
                 setClickBlock(block)           
-            })
+            })    
         }
     }
     
 
-
     
     return (
         <>  
+         <Button  onClick={()=>setShow(true)}>Comprar Bloques</Button>
+ <ModalPurchase show={show} blocks={selectedBlocks} handleClose={function (): void {
+        setShow(false)
+      } }/>
+
+      <ModalInfo show={showInfo} soldOutBlock={soldOutClicked} handleClose={function (): void {
+        setShowInfo(false)
+      } } />
+      
             <canvas ref={canvasRef} width='840' height='540'  />
+
         </>
         
       );

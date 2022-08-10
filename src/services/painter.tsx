@@ -3,6 +3,8 @@ import {block} from '../interfaces/block'
 
 
 class Painter {
+
+  
     
   drawBackground(context:CanvasRenderingContext2D) {
         var background = new Image(); 
