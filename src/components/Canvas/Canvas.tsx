@@ -6,6 +6,7 @@ import {soldOutBlock} from '../../interfaces/soldOutBlock'
 import  Painter  from "../../services/painter";
 import ModalPurchase from "../ModalPurchase/ModalPurchase";
 import ModalInfo from "../ModalInfo/ModalInfo";
+import './Canvas.css';
 
   
 const Canvas: React.FC = () => {
@@ -28,7 +29,8 @@ const Canvas: React.FC = () => {
             const context = canvas?.getContext('2d');   
             if(context && canvas) {
                 setContext(context);
-                Painter.drawBackground(context)   
+                // Painter.drawBackground(context)  
+                Painter.drawBoard(context)
                 addEvents(context,canvas) 
 
                 getPixeles().then(docsSnap => {
@@ -67,7 +69,6 @@ const Canvas: React.FC = () => {
          soldOutBlocks.forEach((b:soldOutBlock) => {                   
             if(b.x == clickBlock?.x && b.y == clickBlock?.y){
                  existe=true
-console.log(b)
                 setSoldOutClicked(b)
                 setShowInfo(true)
 
@@ -153,7 +154,7 @@ console.log(b)
         setShowInfo(false)
       } } />
       
-            <canvas ref={canvasRef} width='840' height='540'  />
+            <canvas ref={canvasRef} width='540 ' height='840'  />
 
         </>
         

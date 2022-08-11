@@ -6,24 +6,24 @@ class Painter {
 
   
     
-  drawBackground(context:CanvasRenderingContext2D) {
-        var background = new Image(); 
-        background.src = 'https://previews.123rf.com/images/tonygers/tonygers1401/tonygers140100028/25082143-una-vista-a%C3%A9rea-de-una-cancha-de-baloncesto-completan-con-las-marcas-.jpg'; 
-        background.onload = () => {
-            context.drawImage(background,0,0); 
-            this.drawBoard(context);
-        }
-    }   
+  // drawBackground(context:CanvasRenderingContext2D) {
+  //       var background = new Image(); 
+  //       background.src = 'https://previews.123rf.com/images/tonygers/tonygers1401/tonygers140100028/25082143-una-vista-a%C3%A9rea-de-una-cancha-de-baloncesto-completan-con-las-marcas-.jpg'; 
+  //       background.onload = () => {
+  //           context.drawImage(background,0,0); 
+  //           this.drawBoard(context);
+  //       }
+  //   }   
 
  drawBoard(context:CanvasRenderingContext2D) {
-    for (var x = 0; x < 840; x++) {
+    for (var x = 0; x < 540; x++) {
       context.moveTo(x*30, 0); 
-      context.lineTo(x*30, 540); 
+      context.lineTo(x*30, 840); 
     } 
 
-    for (var y = 0; y < 540; y++) {
+    for (var y = 0; y < 840; y++) {
       context.moveTo(0, 30*y); 
-      context.lineTo(840, 30*y); 
+      context.lineTo(540, 30*y); 
     }
 
     context.strokeStyle = "white";

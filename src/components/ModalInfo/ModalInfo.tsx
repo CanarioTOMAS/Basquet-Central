@@ -17,9 +17,20 @@ const ModalInfo: React.FC<ModalInfoProps> = ({show,soldOutBlock,handleClose}:Mod
         <>  
             <Modal show={show} onHide={handleClose} className="modal">
             <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>
+                {soldOutBlock?.name} {soldOutBlock?.surname}
+                
+               </Modal.Title>
             </Modal.Header>
-            <Modal.Body>{soldOutBlock?.name}</Modal.Body>
+            <Modal.Body>
+                <div>
+                <b>Empresa:</b> {soldOutBlock?.business}
+                </div><div>
+                <b>Email:</b> {soldOutBlock?.email}
+                </div><div>
+                <b>Telefono:</b> {soldOutBlock?.phone}
+                </div>
+            </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                 Cerrar
