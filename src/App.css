@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+.App{
+    text-align: center;
+    background-image: url("./image/images.jfif");
 }
 
 .App-logo {
@@ -37,3 +38,27 @@
   }
 }
 
+.logo-central{
+  width: 70px; 
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.title{
+  font-size: xx-large;
+  margin-top: 10px;
+  
+}
+
+.foto1{
+  background-image:url("./image/CanchaBasquet.png");
+  width: 70px; 
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.foto2{
+  background-image:url("./image/cancha-basquet.png");
+  width: 70px; 
+  margin-top: 10px;
+  margin-left: 10px;
+}

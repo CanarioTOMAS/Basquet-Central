@@ -35,7 +35,7 @@ const ModalPurchase: React.FC<ModalPurchaseProps> = ({show,blocks,handleClose}:M
              addPixel(blocks[i],datos)
         
         };
-        var url = 'https://wa.me/+543571311605/?text=Cantidad+de+metros: '+ blocks.length +''+ datos.name + datos.surname+ datos.business+ datos.email+datos.phone
+        var url = 'https://wa.me/+543571311605/?text=Cantidad+de+metros: '+ blocks.length +' '+ datos.name +' '+ datos.surname+ ' '+datos.business+' '+datos.email+' '+datos.phone
         window.open(url, '_blank');   
     }else{
         alert('complete los datos ')

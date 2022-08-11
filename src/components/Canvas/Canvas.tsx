@@ -145,7 +145,7 @@ const Canvas: React.FC = () => {
     
     return (
         <>  
-         <Button  onClick={()=>setShow(true)}>Comprar Bloques</Button>
+        
  <ModalPurchase show={show} blocks={selectedBlocks} handleClose={function (): void {
         setShow(false)
       } }/>
@@ -155,7 +155,7 @@ const Canvas: React.FC = () => {
       } } />
       
             <canvas ref={canvasRef} width='540 ' height='840'  />
-
+            <Button  onClick={()=>setShow(true)}>Comprar Bloques</Button>
         </>
         
       );
