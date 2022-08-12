@@ -1,3 +1,7 @@
 canvas{
     background-image:url("/src/image/cancha-basquet.png");
 }
+.buttonn{
+    text-align: center;
+    margin: auto;
+}

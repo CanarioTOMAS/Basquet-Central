@@ -8,6 +8,7 @@ import ModalPurchase from './components/ModalPurchase/ModalPurchase';
 import foto1 from "./image/cluc.jpeg";
 import foto2 from "./image/parquet.jpg";
 
+
 function App() {
 
   return (
@@ -32,7 +33,39 @@ function App() {
     </div>
 </div>
      
-      <Canvas />
+<Canvas />
+      <div className="container-fluid">
+    <div className="row separar">
+    <div className='col'></div>
+      <div className="col-3 contenedor1">
+        <p className="contacto ">Contacto</p>
+        <p className="cel">3571-524930 - Juama</p>
+        <p className="cel">3571-550548 - Federico</p>
+        <p className="cel">3571-594476 - José</p>
+        <p className="cel">3571-565906 - Laura</p>
+      </div>
+
+      <div className="col-3 contenedor2">
+        <p className="contacto">Redes</p>
+        <p className="cel">Instagram = @Basquet.csca</p>
+        <p className="cel">Facebook = @Basquet.csca</p>
+      </div>
+      
+      <div className="col-3 contenedor3">
+        <p className="contacto">Formas de Pago</p>
+        <p className="cel">$5000 el m<sup>2</sup></p>
+        <p className="cel">°Efectivo</p>
+        <p className="cel">°Transferencia</p>
+        <p className="cel">°3 cuotas sin interés</p>
+      </div>
+      <div className='col'></div> 
+   </div>
+</div>
+<div className='row separar'>
+<footer>
+    Esta aplicacion fue creada por SocialUp
+   </footer>
+   </div>
     </div>
   );
 }
