@@ -23,73 +23,78 @@ const Canvas: React.FC = () => {
  
 
     useEffect(() => {
-        const canvas = canvasRef.current;   
+      const canvas = canvasRef.current;
+      if (canvasRef.current) {
+          const context = canvas?.getContext('2d');
+          if(context && canvas) {
+              setContext(context);
+              // Painter.drawBackground(context)
+              Painter.drawBoard(context)
+              addEvents(context,canvas)
+              getPixeles().then(docsSnap => {
+                  let array:soldOutBlock[] = []
+                  docsSnap.forEach((doc:any) => {
+                      let resultado = doc.id.split(",")
+                      let data:soldOutBlock = {
+                          x: parseInt(resultado[0]),
+                          y: parseInt(resultado[1]),
+                          image: doc.data().userData.imagen ,
+                          name:  doc.data().userData.name ,
+                          surname:doc.data().userData.surname ,
+                          business:doc.data().userData.business,
+                          email:doc.data().userData.email,
+                          phone:doc.data().userData.phone
+                      }
+                      Painter.drawSoldOutBlocks(data,context)
+                      array.push(data)
+                  })
+                  setSoldOutBlocks(array);
+              })
+          }
+      }
+  },[]);
+  useEffect(() => {
+      let existe = false;
+      console.log(clickBlock)
+      selectedBlocks.forEach(block => {
+          if(block.x == clickBlock?.x && block.y == clickBlock?.y){
+               existe=true
 
-        if (canvasRef.current) {
-            const context = canvas?.getContext('2d');   
-            if(context && canvas) {
-                setContext(context);
-                // Painter.drawBackground(context)  
-                Painter.drawBoard(context)
-                addEvents(context,canvas) 
-
-                getPixeles().then(docsSnap => {
-                    let array:soldOutBlock[] = []
-                    docsSnap.forEach((doc:any) => { 
-                        let resultado = doc.id.split(",")
-                        let data:soldOutBlock = {
-                            x: parseInt(resultado[0]), 
-                            y: parseInt(resultado[1]),
-                            image: doc.data().userData.imagen ,
-                            name:  doc.data().userData.name ,  
-                            surname:doc.data().userData.surname ,  
-                            business:doc.data().userData.business,
-                            email:doc.data().userData.email,
-                            phone:doc.data().userData.phone
-                        }
-
-                        Painter.drawSoldOutBlocks(data,context)
-                        array.push(data)    
-                      
-                    }) 
-                    setSoldOutBlocks(array);                    
-                })               
-            }     
-        }       
-    },[]); 
-
-    useEffect(() => {
-        let existe = false;
-        selectedBlocks.forEach(block => {                   
-            if(block.x == clickBlock?.x && block.y == clickBlock?.y){
-                 existe=true
-            }
-         })
-
-         soldOutBlocks.forEach((b:soldOutBlock) => {                   
-            if(b.x == clickBlock?.x && b.y == clickBlock?.y){
-                 existe=true
-                setSoldOutClicked(b)
-                setShowInfo(true)
-
-            
-            }
-         })
-
-     
-         if(!existe && selectedBlocks.length<5){     
-          if(clickBlock){
-            Painter.drawSelectedBlock(clickBlock,context)              
-            setSelectedBlocks([...selectedBlocks , clickBlock]);
-            console.log(selectedBlocks)
-
-          }                           
-            
-           
-         }else{
-          // alert('WPP')
-         }
-    },[clickBlock]);   
+          }
+       })
+       soldOutBlocks.forEach((b:soldOutBlock) => {
+          if(b.x == clickBlock?.x && b.y == clickBlock?.y){
+               existe=true
+              setSoldOutClicked(b)
+              setShowInfo(true)
+          }
+       })
+      //Painter.deleteSelectedBlock(clickBlock,context)
+       if(!existe && selectedBlocks.length<5){
+        if(clickBlock){
+          Painter.drawSelectedBlock(clickBlock,context)
+          setSelectedBlocks([...selectedBlocks , clickBlock]);
+        }
+       }else{
+          let borrar = -1
+          for(let i=0; i < selectedBlocks.length;i++){
+            if (selectedBlocks[i].x==clickBlock?.x && clickBlock?.y == selectedBlocks[i].y){
+              const temp = [...selectedBlocks];
+              temp.splice(i,1)
+              setSelectedBlocks(temp)
+              if(clickBlock)
+                Painter.deleteSelectedBlock(clickBlock,context)
+              }
+          }
+        // alert('WPP')
+          if (borrar!=-1){
+          }
+          borrar=-1
+       }
+  },[clickBlock]);
+  useEffect(()=>{
+    console.log(selectedBlocks)
+  },[selectedBlocks]) 
       
       
     function addEvents(context:CanvasRenderingContext2D,canvas: HTMLCanvasElement) {
@@ -98,17 +103,17 @@ const Canvas: React.FC = () => {
                 var xBlock = 0; 
                 var yBlock = 0; 
               
-                if (e.offsetX < 840) {
+                if (e.offsetX < 540) {
                   xBlock = Math.floor((e.offsetX/30) % 100); 
                 }
-                else if (e.offsetX <  840) {
+                else if (e.offsetX <  540) {
                   xBlock = parseInt(e.offsetX.toString().substr(0,0));
                 }
               
-                if (e.offsetY < 540) {
+                if (e.offsetY < 840) {
                   yBlock = Math.floor((e.offsetY/30) % 100);
                 }
-                else if (e.offsetY < 540) {
+                else if (e.offsetY < 840) {
                   yBlock = parseInt(e.offsetY.toString().substr(0,0));
                 } 
               
@@ -120,17 +125,17 @@ const Canvas: React.FC = () => {
                 var xBlock = 0; 
                 var yBlock = 0; 
           
-                if (e.offsetX < 840) {
+                if (e.offsetX < 540) {
                   xBlock = Math.floor((e.offsetX/30) % 100); 
                 }
-                else if (e.offsetX <  840) {
+                else if (e.offsetX <  540) {
                   xBlock = parseInt(e.offsetX.toString().substr(0,0));
                 }
           
-                if (e.offsetY < 540) {
+                if (e.offsetY < 840) {
                   yBlock = Math.floor((e.offsetY/30) % 100);
                 }
-                else if (e.offsetY < 540) {
+                else if (e.offsetY < 840) {
                   yBlock = parseInt(e.offsetY.toString().substr(0,0));
                 }
           
@@ -154,7 +159,7 @@ const Canvas: React.FC = () => {
         setShowInfo(false)
       } } />
       
-            <canvas ref={canvasRef} width='540 ' height='840'  />
+            <canvas ref={canvasRef} width='540 ' height='840' /><br></br>
             <Button className="buttonn" onClick={()=>setShow(true)}>Comprar Bloques</Button>
         </>
         

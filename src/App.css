@@ -1,6 +1,6 @@
 .App{
     text-align: center;
-    background-image: url("./image/images.jfif");
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAA1BMVEXk5OSU5FUvAAAAR0lEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBgxUwAAU+n3sIAAAAASUVORK5CYII=")
 }
 
 .App-logo {
@@ -39,12 +39,20 @@
 }
 
 .logo-central{
-  width: 70px; 
-  margin-top: 10px;
-  margin-left: 10px;
+  width: 100px; 
+  /* margin-top: 10px;
+  margin-left: 10px; */
+  /* background-image: url("./image/logo-sin-fondo.png"); */
 }
 .title{
   font-size: xx-large;
+  text-align: center;
+  margin-top: 10px;
+  
+}
+.subtitle{
+  font-size:medium;
+  text-align: center;
   margin-top: 10px;
   
 }
@@ -109,4 +117,18 @@ footer{
   text-align: left;
  color:white;
  margin-left:40px ;
+}
+.link{
+color:#ffffff;
+text-decoration:none;
+}
+.container-fluid{
+  background-image:url('./image/parquet2.jpg');
+  padding: 30px;
+}
+.title{
+  background-color: rgba(255, 255, 255, 0.553);
+}
+.subtitle{
+  color:white;
 }

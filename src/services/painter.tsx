@@ -33,6 +33,11 @@ class Painter {
    drawSelectedBlock(block:block,context?:CanvasRenderingContext2D ) {
     context?.fillRect(block.x * 30, block.y * 30 , 30, 30)
 }
+deleteSelectedBlock(block:block,context?:CanvasRenderingContext2D ) {
+  // context?.fillStyle:'white'
+  context?.fillRect(block.x * 30, block.y * 30 , 30, 30)
+  context?.clearRect(block.x * 30, block.y * 30 , 30, 30)
+}
 
  drawSoldOutBlocks(block:block,context:CanvasRenderingContext2D) {
     
