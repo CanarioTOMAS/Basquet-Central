@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ModalInfo from './components/ModalInfo/ModalInfo';
@@ -7,9 +7,11 @@ import { Button, Modal } from "react-bootstrap";
 import ModalPurchase from './components/ModalPurchase/ModalPurchase';
 import foto1 from "./image/cluc.jpeg";
 import foto2 from "./image/logo2.png";
-
+import ModalDescription from './components/ModalDescription/ModaDescription';
 
 function App() {
+
+  const [showInfo, setShowInfo] = React.useState(true);
 
   return (
   <div className="App">
@@ -19,7 +21,7 @@ function App() {
           <img className="logo-central" src={foto2}></img>
         </div>
           <div className="col-6" >
-            <p className="title"  >"Un metro por un sueño - 500m<sup>2</sup>"</p>
+            <p className="title"  >"UN METRO POR UN SUEÑO - 500m<sup>2</sup>"</p>
           </div>
           <div className="col-1" >
             
@@ -30,7 +32,9 @@ function App() {
         <p className='subtitle'>#SUMATE - #VosPosdesHacerHistoria</p>
       </div>
     </div>
-     
+    <ModalDescription show={showInfo} handleClose={function (): void {
+        setShowInfo(false)
+      } } />
 <Canvas />
       <div className="fluid">
     <div className="row separar">
