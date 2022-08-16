@@ -160,7 +160,7 @@ const Canvas: React.FC = () => {
       } } />
       
             <canvas ref={canvasRef} width='540 ' height='840' /><br></br>
-            <Button className="buttonn" onClick={()=>setShow(true)}>Comprar Bloques</Button>
+            <Button className="buttonn" onClick={()=>setShow(true)} size="lg">Comprar Bloques</Button>
         </>
         
       );
