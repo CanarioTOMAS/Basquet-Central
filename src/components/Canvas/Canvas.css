@@ -1,8 +1,13 @@
 canvas{
     background-image:url("/src/image/CANCHAPC.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     border:solid;
     border-color:rgb(201, 35, 35);
-    margin-top: 30px;
+    width: 100%;
+    max-width: 540px;
+    
 }
 .buttonn{
     text-align: center;

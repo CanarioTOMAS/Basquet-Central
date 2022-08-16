@@ -1,6 +1,7 @@
 .App{
     text-align: center;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAA1BMVEXk5OSU5FUvAAAAR0lEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBgxUwAAU+n3sIAAAAASUVORK5CYII=")
+    
 }
 
 .App-logo {
@@ -86,6 +87,7 @@ border-radius: 20px;
 border: 2px solid #dd4949;
 }
 .contenedor1{
+
   margin: 5px;
   padding: 3px 10px;
   border: rgb(188, 24, 38) 5px solid;
@@ -93,6 +95,7 @@ border: 2px solid #dd4949;
   background-image:url('https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg') ;
 }
 .contenedor2{
+
   margin: 5px;
   padding: 3px 10px;
   border: rgb(188, 24, 38) 5px solid;
@@ -100,6 +103,7 @@ border: 2px solid #dd4949;
   background-image:url('https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg') ;
 }
 .contenedor3{
+
   margin: 5px;
   padding: 3px 10px;
   border: rgb(188, 24, 38) 5px solid;
@@ -112,7 +116,9 @@ footer{
   background-color: rgb(172, 162, 162);
 }
 .separar{
-  padding-top:100px;
+
+   padding-top:100px;
+  
   
 }
 .cel{
@@ -126,7 +132,7 @@ text-decoration:none;
 }
 .container-fluid{
   background-image:url('./image/parquet2.jpg');
-  padding: 30px;
+  
 }
 .title{
   Font-family: Bodoni MT, Bodoni 72, Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
