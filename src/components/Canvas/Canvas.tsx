@@ -104,7 +104,7 @@ const Canvas: React.FC = () => {
 
                 if (e.offsetX < canvas.clientWidth) {
                   xBlock = Math.floor((e.offsetX/(canvas.clientWidth/18)) % 100); 
-                  console.log('Xblock: '+ xBlock)
+                  
                 }
                 else if (e.offsetX <  canvas.clientWidth) {
                   xBlock = parseInt(e.offsetX.toString().substr(0,0));
@@ -147,7 +147,13 @@ const Canvas: React.FC = () => {
         }
     }
     
-
+function validator(){
+  if(selectedBlocks.length>0){
+    setShow(true)
+  }else{
+    alert('debe seleccionar al menos 1 metro cuadrado')
+  }
+}
     
     return (
         <>  
@@ -161,7 +167,7 @@ const Canvas: React.FC = () => {
       } } />
       
             <canvas ref={canvasRef} width='540 ' height='840' /><br></br>
-            <Button className="buttonn" onClick={()=>setShow(true)} size="lg">Comprar Bloques</Button>
+            <Button className="buttonn" onClick={()=> validator()} size="lg">Comprar Bloques</Button>
         </>
         
       );

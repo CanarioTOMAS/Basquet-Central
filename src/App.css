@@ -41,24 +41,13 @@
 
 .logo-central{
   width: 100px; 
+
   /* margin-top: 10px;
   margin-left: 10px; */
   /* background-image: url("./image/logo-sin-fondo.png"); */
 }
-.title{
-  font-size: xx-large;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-  text-align: center;
-  margin-top: 10px;
-  
-}
-.subtitle{
-  font-size:medium;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-  text-align: center;
-  margin-top: 10px;
-  
-}
+
+
 
 .foto1{
   background-image:url("./image/CanchaBasquet.png");
@@ -135,10 +124,16 @@ text-decoration:none;
   
 }
 .title{
-  Font-family: Bodoni MT, Bodoni 72, Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
   background-color: rgba(255, 255, 255, 0.553);
-
+  font-size: xx-large;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  text-align: center;
+  margin-top: 10px;
 }
 .subtitle{
   color:white;
+  font-size:larger;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  text-align: center;
+  margin-top: 10px;
 }

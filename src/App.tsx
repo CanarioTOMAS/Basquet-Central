@@ -15,10 +15,10 @@ function App() {
   <div className="App">
     <div className=" container-fluid">
       <div className="row">
-        <div className="col-3">
+        <div className="col">
           <img className="logo-central" src={foto2}></img>
         </div>
-          <div className="col-6" >
+          <div className="col-6-sm" >
             <p className="title"  >"UN METRO POR UN SUEÑO - 500m<sup>2</sup>"</p>
           </div>
           <div className="col-1" >
