@@ -8,8 +8,6 @@ export async function getPixeles(){
     const docsRef = await getDocs(colRef);
 
     docsRef.forEach(doc =>{
-    //    console.log(doc.data())
-    //     console.log(doc.id)  
 
     })
    return docsRef
@@ -17,7 +15,7 @@ export async function getPixeles(){
 }
 
 export function addPixel(block,userData){
-    console.log(block)
+
     let id = block.x+","+block.y
     setDoc(doc(db, collectionBlock, id),{
         userData

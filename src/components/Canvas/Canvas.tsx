@@ -55,7 +55,6 @@ const Canvas: React.FC = () => {
   },[]);
   useEffect(() => {
       let existe = false;
-      console.log(clickBlock)
       selectedBlocks.forEach(block => {
           if(block.x == clickBlock?.x && block.y == clickBlock?.y){
                existe=true
@@ -93,29 +92,30 @@ const Canvas: React.FC = () => {
        }
   },[clickBlock]);
   useEffect(()=>{
-    console.log(selectedBlocks)
+
   },[selectedBlocks]) 
       
-      
+    
     function addEvents(context:CanvasRenderingContext2D,canvas: HTMLCanvasElement) {
         if (canvas) {
             canvas.addEventListener('mousemove',(e)=>{
                 var xBlock = 0; 
                 var yBlock = 0; 
-              
-                if (e.offsetX < 540) {
-                  xBlock = Math.floor((e.offsetX/30) % 100); 
+
+                if (e.offsetX < canvas.clientWidth) {
+                  xBlock = Math.floor((e.offsetX/(canvas.clientWidth/18)) % 100); 
+                  console.log('Xblock: '+ xBlock)
                 }
-                else if (e.offsetX <  540) {
+                else if (e.offsetX <  canvas.clientWidth) {
                   xBlock = parseInt(e.offsetX.toString().substr(0,0));
                 }
               
-                if (e.offsetY < 840) {
-                  yBlock = Math.floor((e.offsetY/30) % 100);
+                if (e.offsetY < canvas.clientHeight) {
+                  yBlock = Math.floor((e.offsetY/(canvas.clientHeight/28)) % 100);
                 }
-                else if (e.offsetY < 840) {
+                else if (e.offsetY < canvas.clientHeight) {
                   yBlock = parseInt(e.offsetY.toString().substr(0,0));
-                } 
+                }
               
               
               })
@@ -125,17 +125,18 @@ const Canvas: React.FC = () => {
                 var xBlock = 0; 
                 var yBlock = 0; 
           
-                if (e.offsetX < 540) {
-                  xBlock = Math.floor((e.offsetX/30) % 100); 
+                if (e.offsetX < canvas.clientWidth) {
+                  xBlock = Math.floor((e.offsetX/(canvas.clientWidth/18)) % 100); 
+                  console.log('Xblock: '+ xBlock)
                 }
-                else if (e.offsetX <  540) {
+                else if (e.offsetX <  canvas.clientWidth) {
                   xBlock = parseInt(e.offsetX.toString().substr(0,0));
                 }
-          
-                if (e.offsetY < 840) {
-                  yBlock = Math.floor((e.offsetY/30) % 100);
+              
+                if (e.offsetY < canvas.clientHeight) {
+                  yBlock = Math.floor((e.offsetY/(canvas.clientHeight/28)) % 100);
                 }
-                else if (e.offsetY < 840) {
+                else if (e.offsetY < canvas.clientHeight) {
                   yBlock = parseInt(e.offsetY.toString().substr(0,0));
                 }
           

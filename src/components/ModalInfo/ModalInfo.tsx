@@ -11,7 +11,6 @@ interface ModalInfoProps{
   
 const ModalInfo: React.FC<ModalInfoProps> = ({show,soldOutBlock,handleClose}:ModalInfoProps) => {
     
-   console.log(soldOutBlock)
     
     return (
         <>  

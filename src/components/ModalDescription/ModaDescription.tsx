@@ -12,7 +12,7 @@ interface ModalDescriptionProps{
   
 const ModalDescription: React.FC<ModalDescriptionProps> = ({show,soldOutBlock,handleClose}:ModalDescriptionProps) => {
     
-   console.log(soldOutBlock)
+
     
     return (
         <>  
