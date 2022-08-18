@@ -54,19 +54,19 @@ function App() {
         }}
       />
       <Canvas />
-      <div className="container">
+      <div className="">
         <div className="row separar">
           <div className="col-sm"></div>
-          <div className="col-sm-3  contenedor1">
-            <p className="contacto ">Contacto</p>
+          <div className="col-sm-3  box">
+            <p className="box-header">Contacto</p>
             <p className="cel">3571-524930 - Ivana</p>
             <p className="cel">3571-550548 - Federico</p>
             <p className="cel">3571-594476 - José</p>
             <p className="cel">3571-565906 - Laura</p>
           </div>
 
-          <div className="col-sm-3 contenedor2">
-            <p className="contacto">Redes</p>
+          <div className="col-sm-3 box">
+            <p className="box-header">Redes</p>
             <p className="cel">
               {" "}
               Instagram =
@@ -90,14 +90,16 @@ function App() {
             </p>
           </div>
 
-          <div className="col-sm-3 contenedor3">
-            <p className="contacto">Formas de Pago</p>
-            <p className="cel">
-              $5000 el m<sup>2</sup>
-            </p>
-            <p className="cel">°Efectivo</p>
-            <p className="cel">°Transferencia</p>
-            <p className="cel">°3 cuotas sin interés</p>
+          <div className="col-sm-3 box">
+            <p className="box-header">Formas de Pago</p>
+            <div className="box-body"> 
+              <p className="cel">
+                $5000 el m<sup>2</sup>
+              </p>
+              <p className="cel">°Efectivo</p>
+              <p className="cel">°Transferencia</p>
+              <p className="cel">°3 cuotas sin interés</p>
+            </div>            
           </div>
           <div className="col-sm"></div>
         </div>

@@ -65,52 +65,48 @@
   margin-top: 10px;
   margin-left: 10px;
 }
-.contacto {
+
+.box{
+  margin: 5px;
+  padding:0px !important;
+  border: rgb(188, 24, 38) 3px solid;
+  border-radius: 20px;
+  -webkit-box-shadow: 4px 4px 6px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 4px 6px -3px rgba(0,0,0,0.75);
+box-shadow: 4px 4px 6px -3px rgba(0,0,0,0.75);
+  background-image: url("https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg");
+}
+.box-header {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   color: #ffffff;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 800;
   text-align: center;
-  background: #d63d3d;
+  background: rgb(188, 24, 38);
   margin: 0 0 25px;
   overflow: hidden;
   padding: 15px;
-  border-radius: 20px;
-  border: 2px solid #dd4949;
+  border-radius: 20px 20px 0px 0px;
 }
-.contenedor1 {
-  margin: 5px;
-  padding: 3px 10px;
-  border: rgb(188, 24, 38) 5px solid;
-  border-radius: 20px;
-  background-image: url("https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg");
+
+.box-body{
+  padding:15px;
+  text-align: center;
 }
-.contenedor2 {
-  margin: 5px;
-  padding: 3px 10px;
-  border: rgb(188, 24, 38) 5px solid;
-  border-radius: 20px;
-  background-image: url("https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg");
-}
-.contenedor3 {
-  margin: 5px;
-  padding: 3px 10px;
-  border: rgb(188, 24, 38) 5px solid;
-  border-radius: 20px;
-  background-image: url("https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg");
-}
+
 footer {
+
+  height: 150px;
   padding-top: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
   background-color: rgb(172, 162, 162);
 }
 .separar {
   padding-top: 100px;
 }
 .cel {
-  text-align: left;
   color: white;
-  margin-left: 40px;
+  font-weight: 600;
 }
 .link {
   color: #ffffff;
@@ -123,21 +119,20 @@ footer {
   
 }
 .title {
-  background-color: rgba(255, 255, 255, 0.553);
   font-size: 2em;
-  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 800;
+  color:white;
   text-align: center;
   margin-top: 10px;
+  
 }
 
 .header-title{
-  /* height: 40vh; */
-  z-index: 1;
+  height: 50vh;
 }
 .subtitle {
   color: white;
   font-size: larger;
-  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   text-align: center;
   margin-top: 10px;
 }

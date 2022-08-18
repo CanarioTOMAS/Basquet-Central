@@ -21,6 +21,7 @@ z-index: 9999;
     max-width: 840px;
     bottom: 0px;
     z-index: 999;
+    font-weight: 900 !important;
 }
 
 @media screen {
