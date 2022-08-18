@@ -24,7 +24,8 @@ class Painter {
     context?.fillRect(block.x * 30, block.y * 30 , 30, 30)
 }
 deleteSelectedBlock(block:block,context?:CanvasRenderingContext2D ) {
-  // context?.fillStyle:'white'
+  
+  
   context?.fillRect(block.x * 30, block.y * 30 , 30, 30)
   context?.clearRect(block.x * 30, block.y * 30 , 30, 30)
 }
@@ -41,7 +42,7 @@ deleteSelectedBlock(block:block,context?:CanvasRenderingContext2D ) {
             }
     }
     else{	
-      context.fillStyle='rgba(255, 125, 0, 0.5)'
+      context.fillStyle='rgba(255, 125, 0, 0.7)'
         context?.fillRect(block.x*30,block.y*30, 30, 30)
     }
     

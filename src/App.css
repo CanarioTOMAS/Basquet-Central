@@ -1,7 +1,6 @@
-.App{
-    text-align: center;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAA1BMVEXk5OSU5FUvAAAAR0lEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBgxUwAAU+n3sIAAAAASUVORK5CYII=")
-    
+.App {
+  text-align: center;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAA1BMVEXk5OSU5FUvAAAAR0lEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBgxUwAAU+n3sIAAAAASUVORK5CYII=");
 }
 
 .App-logo {
@@ -39,101 +38,94 @@
   }
 }
 
-.logo-central{
-  width: 100px; 
+.logo-central {
+  width: 150px;
 
   /* margin-top: 10px;
   margin-left: 10px; */
   /* background-image: url("./image/logo-sin-fondo.png"); */
 }
 
-
-
-.foto1{
-  background-image:url("./image/CanchaBasquet.png");
-  width: 70px; 
+.foto1 {
+  background-image: url("./image/CanchaBasquet.png");
+  width: 70px;
   margin-top: 10px;
   margin-left: 10px;
 }
 
-.foto2{
-  background-image:url("./image/cancha-basquet.png");
-  width: 70px; 
+.foto2 {
+  background-image: url("./image/cancha-basquet.png");
+  width: 70px;
   margin-top: 10px;
   margin-left: 10px;
 }
-.contacto{ 
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-color: #ffffff; 
-font-size: 18px; 
-font-weight: 400; 
-text-align: center; 
-background: #d63d3d; 
-margin: 0 0 25px; 
-overflow: hidden; 
-padding: 15px; 
-border-radius: 20px; 
-border: 2px solid #dd4949;
+.contacto {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  background: #d63d3d;
+  margin: 0 0 25px;
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 20px;
+  border: 2px solid #dd4949;
 }
-.contenedor1{
-
+.contenedor1 {
   margin: 5px;
   padding: 3px 10px;
   border: rgb(188, 24, 38) 5px solid;
   border-radius: 20px;
-  background-image:url('https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg') ;
+  background-image: url("https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg");
 }
-.contenedor2{
-
+.contenedor2 {
   margin: 5px;
   padding: 3px 10px;
   border: rgb(188, 24, 38) 5px solid;
   border-radius: 20px;
-  background-image:url('https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg') ;
+  background-image: url("https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg");
 }
-.contenedor3{
-
+.contenedor3 {
   margin: 5px;
   padding: 3px 10px;
   border: rgb(188, 24, 38) 5px solid;
   border-radius: 20px;
-  background-image:url('https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg') ;
+  background-image: url("https://us.123rf.com/450wm/julydfg/julydfg1104/julydfg110400068/9410382-textura-de-pelota-de-baloncesto-ilustraci%C3%B3n-vectorial-.jpg");
 }
-footer{
+footer {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: rgb(172, 162, 162);
 }
-.separar{
-
-   padding-top:100px;
-  
-  
+.separar {
+  padding-top: 100px;
 }
-.cel{
+.cel {
   text-align: left;
- color:white;
- margin-left:40px ;
+  color: white;
+  margin-left: 40px;
 }
-.link{
-color:#ffffff;
-text-decoration:none;
+.link {
+  color: #ffffff;
+  text-decoration: none;
 }
-.container-fluid{
-  background-image:url('./image/parquet2.jpg');
+.container-fluid {
+
+  background-image: url("./image/parquet2.jpg");
   
 }
-.title{
+.title {
   background-color: rgba(255, 255, 255, 0.553);
   font-size: xx-large;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   text-align: center;
   margin-top: 10px;
 }
-.subtitle{
-  color:white;
-  font-size:larger;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+.subtitle {
+  color: white;
+  font-size: larger;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   text-align: center;
   margin-top: 10px;
 }
