@@ -13,21 +13,39 @@ function App() {
   return (
     <div className="App">
       <div className=" container-fluid">
-        <div className="row">
-          <div className="col">
-            <img className="logo-central" src={foto2}></img>
+        <div className="header-title">
+          <div className="row">
+            <div className="col">
+              <img className="logo-central" src={foto2}></img>
+            </div>
+            <div className="col-6-sm">
+              <p className="title">
+                "UN METRO POR UN SUEÑO - 500m<sup>2</sup>"
+              </p>
+            </div>
+            <div className="col-1"></div>
+            <div className="col-2"></div>
           </div>
-          <div className="col-6-sm">
-            <p className="title">
-              "UN METRO POR UN SUEÑO - 500m<sup>2</sup>"
+          <div className="row">
+          <div className="col-2"></div>
+          <div className="col">
+            <p className="subtitle">#SUMATE - #VosPosdesHacerHistoria</p>
+          </div>
+          <div className="col-2">
+            <p className="subtitle">
+              by:
+              <a className="link" href="http://socialup.com.ar/">
+                <strong> SocialUp</strong>{" "}
+                <img
+                  className="icon-link"
+                  src="http://socialup.com.ar/wp-content/uploads/2020/10/logo-768x520.png"
+                ></img>
+              </a>
             </p>
           </div>
-          <div className="col-1"></div>
-          <div className="col-2"></div>
         </div>
-        <div className="col">
-          <p className="subtitle">#SUMATE - #VosPosdesHacerHistoria</p>
         </div>
+        
       </div>
       <ModalDescription
         show={showInfo}
@@ -36,7 +54,7 @@ function App() {
         }}
       />
       <Canvas />
-      <div className="fluid">
+      <div className="container">
         <div className="row separar">
           <div className="col-sm"></div>
           <div className="col-sm-3  contenedor1">
@@ -87,7 +105,13 @@ function App() {
       <div className="row-sm separar">
         <footer>
           Esta aplicacion fue creada por{" "}
-          <a href="http://socialup.com.ar/"> SocialUp</a>
+          <a className="link" href="http://socialup.com.ar/">
+            <strong> SocialUp</strong>{" "}
+            <img
+              className="icon-link"
+              src="http://socialup.com.ar/wp-content/uploads/2020/10/logo-768x520.png"
+            ></img>
+          </a>
         </footer>
       </div>
     </div>

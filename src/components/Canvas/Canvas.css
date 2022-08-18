@@ -3,13 +3,26 @@ canvas{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    border:solid;
+    border: 8px solid;
     border-color:rgb(201, 35, 35);
     width: 100%;
-    max-width: 540px;
-    
+    max-width: 840px;
+    margin-top:40px;
+    border-radius: 15px;
+    -webkit-box-shadow: 4px 4px 6px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 4px 6px -3px rgba(0,0,0,0.75);
+box-shadow: 4px 4px 6px -3px rgba(0,0,0,0.75);
+z-index: 9999;
 }
-.buttonn{
-    text-align: center;
+.comprar-button{
+    position: fixed;
     margin: auto;
+    width: 100%;
+    max-width: 840px;
+    bottom: 0px;
+    z-index: 999;
+}
+
+@media screen {
+    
 }

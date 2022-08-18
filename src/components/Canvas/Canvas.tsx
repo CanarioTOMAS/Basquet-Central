@@ -96,30 +96,14 @@ const Canvas: React.FC = () => {
     canvas: HTMLCanvasElement
   ) {
     if (canvas) {
-      canvas.addEventListener("mousemove", (e) => {
-        var xBlock = 0;
-        var yBlock = 0;
-
-        if (e.offsetX < canvas.clientWidth) {
-          xBlock = Math.floor((e.offsetX / (canvas.clientWidth / 18)) % 100);
-        } else if (e.offsetX < canvas.clientWidth) {
-          xBlock = parseInt(e.offsetX.toString().substr(0, 0));
-        }
-
-        if (e.offsetY < canvas.clientHeight) {
-          yBlock = Math.floor((e.offsetY / (canvas.clientHeight / 28)) % 100);
-        } else if (e.offsetY < canvas.clientHeight) {
-          yBlock = parseInt(e.offsetY.toString().substr(0, 0));
-        }
-      });
-
+     
       canvas.addEventListener("mousedown", async (e) => {
         var xBlock = 0;
         var yBlock = 0;
 
         if (e.offsetX < canvas.clientWidth) {
           xBlock = Math.floor((e.offsetX / (canvas.clientWidth / 18)) % 100);
-          console.log("Xblock: " + xBlock);
+
         } else if (e.offsetX < canvas.clientWidth) {
           xBlock = parseInt(e.offsetX.toString().substr(0, 0));
         }
@@ -162,12 +146,12 @@ const Canvas: React.FC = () => {
           setShowInfo(false);
         }}
       />
-
-      <canvas ref={canvasRef} width="540 " height="840" />
-      <br></br>
-      <Button className="buttonn" onClick={() => validator()} size="lg">
+      <Button className="comprar-button" onClick={() => validator()} size="lg">
         Comprar Bloques
       </Button>
+      <canvas ref={canvasRef} width="540 " height="840" />
+      <br></br>
+     
     </>
   );
 };

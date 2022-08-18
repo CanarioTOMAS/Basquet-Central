@@ -1,3 +1,9 @@
+.link{
+  color:#ffffff;
+}
+.link:hover{
+  color:#FF214F;
+}
 .App {
   text-align: center;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAA1BMVEXk5OSU5FUvAAAAR0lEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBgxUwAAU+n3sIAAAAASUVORK5CYII=");
@@ -39,7 +45,7 @@
 }
 
 .logo-central {
-  width: 150px;
+  width: 140px;
 
   /* margin-top: 10px;
   margin-left: 10px; */
@@ -95,7 +101,7 @@
 }
 footer {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   background-color: rgb(172, 162, 162);
 }
 .separar {
@@ -111,16 +117,22 @@ footer {
   text-decoration: none;
 }
 .container-fluid {
-
+  background-repeat: no-repeat;
+  background-size: cover;
   background-image: url("./image/parquet2.jpg");
   
 }
 .title {
   background-color: rgba(255, 255, 255, 0.553);
-  font-size: xx-large;
+  font-size: 2em;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   text-align: center;
   margin-top: 10px;
+}
+
+.header-title{
+  /* height: 40vh; */
+  z-index: 1;
 }
 .subtitle {
   color: white;
@@ -128,4 +140,18 @@ footer {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   text-align: center;
   margin-top: 10px;
+}
+.subtitle2 {
+  color: white;
+  font-size: larger;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  text-align: end;
+  margin-top: 10px;
+}
+.icon-link{
+  width: 46px;
+  height: auto;
+}
+.icon-link:hover{
+  color:#FF214F;
 }

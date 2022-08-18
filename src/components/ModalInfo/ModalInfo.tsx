@@ -24,10 +24,6 @@ const ModalInfo: React.FC<ModalInfoProps> = ({show,soldOutBlock,handleClose}:Mod
             <Modal.Body>
                 <div>
                 <b>Empresa:</b> {soldOutBlock?.business}
-                </div><div>
-                <b>Email:</b> {soldOutBlock?.email}
-                </div><div>
-                <b>Telefono:</b> {soldOutBlock?.phone}
                 </div>
             </Modal.Body>
             <Modal.Footer>
