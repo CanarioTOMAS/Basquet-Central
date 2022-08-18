@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import "./App.css";
 import Canvas from "./components/Canvas/Canvas";
 import foto2 from "./image/logo2.png";
+import foto1 from "./image/logo-1024x693.png"
 import ModalDescription from "./components/ModalDescription/ModaDescription";
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
                 <strong> SocialUp</strong>{" "}
                 <img
                   className="icon-link"
-                  src="http://socialup.com.ar/wp-content/uploads/2020/10/logo-768x520.png"
+                  src={foto1}
                 ></img>
               </a>
             </p>
