@@ -112,7 +112,7 @@ function App() {
             <strong> SocialUp</strong>{" "}
             <img
               className="icon-link"
-              src="http://socialup.com.ar/wp-content/uploads/2020/10/logo-768x520.png"
+              src={foto1}
             ></img>
           </a>
         </footer>

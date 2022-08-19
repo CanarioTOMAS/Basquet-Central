@@ -52,19 +52,6 @@
   /* background-image: url("./image/logo-sin-fondo.png"); */
 }
 
-.foto1 {
-  background-image: url("./image/CanchaBasquet.png");
-  width: 70px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.foto2 {
-  background-image: url("./image/cancha-basquet.png");
-  width: 70px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
 
 .box{
   margin: 5px;
