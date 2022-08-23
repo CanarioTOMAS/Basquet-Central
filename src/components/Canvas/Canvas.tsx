@@ -7,6 +7,12 @@ import Painter from "../../services/painter";
 import ModalPurchase from "../ModalPurchase/ModalPurchase";
 import ModalInfo from "../ModalInfo/ModalInfo";
 import "./Canvas.css";
+import Confetti from "react-confetti";
+import { createNonNullChain } from "typescript";
+
+interface ConfettiProps{
+  handlePurchaseClickButton: () => void;
+}
 
 const Canvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -18,6 +24,9 @@ const Canvas: React.FC = () => {
   const [showInfo, setShowInfo] = React.useState(false);
   const [blockClicked, setBlockClicked] = React.useState<block>();
   const [soldOutClicked, setSoldOutClicked] = React.useState<soldOutBlock>();
+  const [showConfetti, setShowConfetti]=React.useState(false);
+  const {innerWidth:width,innerHeight:height} = window;
+
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -116,7 +125,9 @@ const Canvas: React.FC = () => {
 
         let block = { x: xBlock, y: yBlock, image: "" };
 
+        setShowConfetti(true);
         setClickBlock(block);
+        
       });
     }
   }
@@ -146,10 +157,21 @@ const Canvas: React.FC = () => {
           setShowInfo(false);
         }}
       />
-      <Button className="comprar-button" onClick={() => validator()} size="lg">
+        <Confetti
+        hidden={!showConfetti}
+        run={showConfetti}
+        width={800}
+        height={2000}
+        confettiSource={{x:100,y:100,w:540,h:840}}
+        colors={['#ff0000','#ffffff']}
+        recycle={false}
+        
+      ></Confetti>
+      <Button className="comprar-button" onClick={() => {validator()
+                                                         }} size="lg">
         Comprar Bloques
       </Button>
-      <canvas ref={canvasRef} width="540 " height="840" />
+      <canvas id="cancha" ref={canvasRef} width="540 " height="840" />
       <br></br>
      
     </>
