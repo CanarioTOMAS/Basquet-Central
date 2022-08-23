@@ -22,11 +22,13 @@ const Canvas: React.FC = () => {
   const [context, setContext] = React.useState<CanvasRenderingContext2D>();
   const [show, setShow] = React.useState(false);
   const [showInfo, setShowInfo] = React.useState(false);
-  const [blockClicked, setBlockClicked] = React.useState<block>();
   const [soldOutClicked, setSoldOutClicked] = React.useState<soldOutBlock>();
   const [showConfetti, setShowConfetti]=React.useState(false);
-  const {innerWidth:width,innerHeight:height} = window;
 
+  const [x, setX]=React.useState(0);
+  const [y, setY]=React.useState(0);
+ 
+  const {innerWidth:width,innerHeight:height} = window;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -59,6 +61,7 @@ const Canvas: React.FC = () => {
       }
     }
   }, []);
+
   useEffect(() => {
     let existe = false;
     selectedBlocks.forEach((block) => {
@@ -123,10 +126,18 @@ const Canvas: React.FC = () => {
           yBlock = parseInt(e.offsetY.toString().substr(0, 0));
         }
 
+        setX(e.offsetX)
+        setY(e.offsetY+350)
+        console.log(xBlock)
+
         let block = { x: xBlock, y: yBlock, image: "" };
 
         setShowConfetti(true);
         setClickBlock(block);
+        
+        setTimeout(() => {
+          setShowConfetti(false);
+        }, 3000);
         
       });
     }
@@ -158,20 +169,21 @@ const Canvas: React.FC = () => {
         }}
       />
         <Confetti
-        hidden={!showConfetti}
-        run={showConfetti}
-        width={800}
+        hidden={false}
+        run={true}
+        width={width}
         height={2000}
-        confettiSource={{x:100,y:100,w:540,h:840}}
+        confettiSource={{x:x,y:y,w:50,h:50}}
         colors={['#ff0000','#ffffff']}
-        recycle={false}
+        recycle={showConfetti}
+        numberOfPieces={400}
         
       ></Confetti>
       <Button className="comprar-button" onClick={() => {validator()
                                                          }} size="lg">
         Comprar Bloques
       </Button>
-      <canvas id="cancha" ref={canvasRef} width="540 " height="840" />
+      <canvas className="cancha" ref={canvasRef} width="540 " height="840" />
       <br></br>
      
     </>
