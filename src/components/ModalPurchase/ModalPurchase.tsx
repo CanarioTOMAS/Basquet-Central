@@ -9,9 +9,9 @@ interface ModalPurchaseProps{
     show: boolean;
     handleClose: () => void;
 }
-
 let currentTimestamp = Date.now()
 let date = new Intl.DateTimeFormat('es-ES', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(currentTimestamp)
+
 const ModalPurchase: React.FC<ModalPurchaseProps> = ({show,blocks,handleClose}:ModalPurchaseProps) => {
     const [datos, setDatos] = useState({
         name: '',
@@ -19,7 +19,7 @@ const ModalPurchase: React.FC<ModalPurchaseProps> = ({show,blocks,handleClose}:M
         business:'',
         phone:'',
         email:'',
-        date:''
+        date
 
 
     })

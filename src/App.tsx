@@ -7,11 +7,19 @@ import Canvas from "./components/Canvas/Canvas";
 import foto2 from "./image/logo2.png";
 import foto1 from "./image/logo-1024x693.png"
 import ModalDescription from "./components/ModalDescription/ModaDescription";
+import Confetti from "react-confetti"
+
+
+
+
+
 
 function App() {
   const [showInfo, setShowInfo] = React.useState(true);
 
+
   return (
+ 
     <div className="App">
       <div className=" container-fluid">
         <div className="header-title">
@@ -54,7 +62,9 @@ function App() {
           setShowInfo(false);
         }}
       />
-      <Canvas />
+      <Canvas/>
+
+      
       <div className="">
         <div className="row separar">
           <div className="col-sm"></div>
