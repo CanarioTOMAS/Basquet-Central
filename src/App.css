@@ -6,8 +6,16 @@
 }
 .App {
   text-align: center;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAA1BMVEXk5OSU5FUvAAAAR0lEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBgxUwAAU+n3sIAAAAASUVORK5CYII=");
+  
 }
+
+body{
+  background-image: url("./image/fondoamarillo.jpg ");
+  background-color: rgba(152, 66, 211, 0.63);
+
+  
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -103,6 +111,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("./image/parquet2.jpg");
+  height: 80vh;
+  box-shadow: 2px 4px 0 4px rgb(255, 102, 0), 4px 8px 0 8px, rgba(255, 102, 0, 0.8), 8px 10px 0 12px rgb(255, 102, 0,0.5);
   
 }
 .title {

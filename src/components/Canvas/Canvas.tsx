@@ -63,7 +63,7 @@ const Canvas: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    let existe = false;
+    let existe = false  ;
     selectedBlocks.forEach((block) => {
       if (block.x == clickBlock?.x && block.y == clickBlock?.y) {
         existe = true;
@@ -81,6 +81,12 @@ const Canvas: React.FC = () => {
       if (clickBlock) {
         Painter.drawSelectedBlock(clickBlock, context);
         setSelectedBlocks([...selectedBlocks, clickBlock]);
+
+        setShowConfetti(true);
+        setTimeout(() => {
+          setShowConfetti(false);
+        }, 2000);
+        
       }
     } else {
       let borrar = -1;
@@ -126,22 +132,22 @@ const Canvas: React.FC = () => {
           yBlock = parseInt(e.offsetY.toString().substr(0, 0));
         }
 
-        setX(e.offsetX)
-        setY(e.offsetY+350)
-        console.log(xBlock)
+        setX(e.clientX)
+        setY(e.clientY+e.offsetY)
+
 
         let block = { x: xBlock, y: yBlock, image: "" };
 
-        setShowConfetti(true);
+       
         setClickBlock(block);
-        
-        setTimeout(() => {
-          setShowConfetti(false);
-        }, 3000);
+       
         
       });
     }
   }
+
+
+  
 
   function validator() {
     if (selectedBlocks.length > 0) {
@@ -169,21 +175,22 @@ const Canvas: React.FC = () => {
         }}
       />
         <Confetti
+        className="confetti"
         hidden={false}
         run={true}
         width={width}
         height={2000}
-        confettiSource={{x:x,y:y,w:50,h:50}}
         colors={['#ff0000','#ffffff']}
         recycle={showConfetti}
-        numberOfPieces={400}
+        confettiSource={{x:x,y:y,w:50,h:50}}
+
         
       ></Confetti>
-      <Button className="comprar-button" onClick={() => {validator()
-                                                         }} size="lg">
+      <Button className="comprar-button" onClick={() => {validator()}} size="lg">
         Comprar Bloques
       </Button>
       <canvas className="cancha" ref={canvasRef} width="540 " height="840" />
+     
       <br></br>
      
     </>

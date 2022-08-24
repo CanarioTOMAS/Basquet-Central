@@ -16,11 +16,17 @@ class Painter {
     context.stroke();
   }
 
+
+
   drawSelectedBlock(block: block, context?: CanvasRenderingContext2D) {
+    if(context)
+      context.fillStyle = "#0d6efd55";
     context?.fillRect(block.x * 30, block.y * 30, 30, 30);
   }
   deleteSelectedBlock(block: block, context?: CanvasRenderingContext2D) {
-    context?.fillRect(block.x * 30, block.y * 30, 30, 30);
+    if(context)
+    context.strokeStyle="white"
+    context?.strokeRect(block.x * 30, block.y * 30, 30, 30);
     context?.clearRect(block.x * 30, block.y * 30, 30, 30);
   }
 
@@ -39,6 +45,7 @@ class Painter {
       context?.fillRect(block.x * 30, block.y * 30, 30, 30);
     }
   }
+
 }
 
 let painter = new Painter();

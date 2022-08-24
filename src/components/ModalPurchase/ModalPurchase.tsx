@@ -50,7 +50,7 @@ const ModalPurchase: React.FC<ModalPurchaseProps> = ({show,blocks,handleClose}:M
         <>  
             <Modal show={show} onHide={handleClose} className="modal">
             <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Ingresa tus datos</Modal.Title>
             </Modal.Header>
             <Modal.Body>
         <Form>
