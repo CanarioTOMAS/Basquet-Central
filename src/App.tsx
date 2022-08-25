@@ -8,6 +8,8 @@ import foto2 from "./image/logo2.png";
 import foto1 from "./image/logo-1024x693.png"
 import ModalDescription from "./components/ModalDescription/ModaDescription";
 import Confetti from "react-confetti"
+import foto3 from "./image/isologotipoblanco.png"
+import foto4 from "./image/sin fondo.png"
 
 function App() {
   const [showInfo, setShowInfo] = React.useState(true);
@@ -29,21 +31,17 @@ function App() {
             <div className="col-2"></div>
           </div>
           <div className="row">
-          <div className="col-2"></div>
+          <div className="col-2">
+            <img className="muni" src={foto3} />
+          </div>
           <div className="col">
             <p className="subtitle">#SUMATE - #VosPosdesHacerHistoria</p>
           </div>
           <div className="col-2">
-            <p className="subtitle">
-              by:
-              <a className="link" href="http://socialup.com.ar/">
-                <strong> SocialUp</strong>{" "}
                 <img
-                  className="icon-link"
-                  src={foto1}
+                  className="socialup"
+                  src={foto4}
                 ></img>
-              </a>
-            </p>
           </div>
         </div>
         </div>
@@ -108,15 +106,20 @@ function App() {
         </div>
       </div>
       <div className="row-sm separar">
+     
         <footer>
+        <div className="box-muni">
+          <img className="muni-footer" src={foto3} />
+          </div>
+          <div  className="box-muni">
           Esta aplicacion fue creada por{" "}
           <a className="link" href="http://socialup.com.ar/">
-            <strong> SocialUp</strong>{" "}
             <img
-              className="icon-link"
-              src={foto1}
+              className="socialup2"
+              src={foto4}
             ></img>
           </a>
+          </div>
         </footer>
       </div>
     </div>
