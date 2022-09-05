@@ -90,8 +90,8 @@ box-shadow: 4px 4px 6px -3px rgba(0,0,0,0.75);
 }
 
 footer {
-
-  height: 150px;
+width: 100%;
+  height: 300px;
   padding-top: 40px;
   padding-bottom: 80px;
   background-color: rgb(172, 162, 162);
@@ -141,9 +141,54 @@ footer {
   margin-top: 10px;
 }
 .icon-link{
-  width: 46px;
-  height: auto;
+  width: 180px;
+  margin-bottom: 100px;
 }
 .icon-link:hover{
   color:#FF214F;
+}
+.muni{
+  margin-top: 30px;
+  height: 70px;
+}
+
+.muni-footer{
+margin-top: auto;
+  padding-top: 5px;
+  height: 80px;
+}
+.socialup{
+  width: 180px;
+  margin-bottom: 100px;
+}
+@media (min-width:768px){
+  .socialup{
+    width: 180px;
+  margin-bottom: 100px;
+  }
+}
+@media (max-width:768px){
+  .socialup{
+    width: 180px;
+    margin-bottom: 100px;
+    margin-left: -120px;
+    margin-top: 70px;
+  }
+}
+@media (min-width:768px){
+  .muni{
+    margin-top: 30px;
+    height: 70px;
+  }
+}
+@media (max-width:768px){
+  .muni {
+    margin-top: 110px;
+    height: 70px;
+}
+}
+.socialup2{
+  text-align: center;
+  width: 130px;
+  
 }
